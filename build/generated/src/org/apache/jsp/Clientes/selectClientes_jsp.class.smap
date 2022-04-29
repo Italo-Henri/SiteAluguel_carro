@@ -1,0 +1,12 @@
+SMAP
+selectClientes_jsp.java
+JSP
+*S JSP
+*F
++ 0 selectClientes.jsp
+Clientes/selectClientes.jsp
+*L
+1,13:47
+15,30:62
+44,5:92
+*E
