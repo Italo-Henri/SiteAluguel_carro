@@ -84,4 +84,23 @@ public class ClientesDAO {
         return Lista;
     }
 
+    public void ExcluirCliente(ClientesDTO objClientesDTO) throws ClassNotFoundException {
+
+        String sql = "DELETE FROM clientes WHERE id_cliente = ?";
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+
+            pstm = con.prepareStatement(sql);
+            pstm.setInt(1, objClientesDTO.getId_usuario());
+
+            pstm.execute();
+            pstm.close();
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "ClienteDAO ExcluirCliente: " + erro);
+        }
+
+    }
+
 }

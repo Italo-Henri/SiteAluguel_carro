@@ -81,6 +81,15 @@ public final class selectClientes_jsp extends org.apache.jasper.runtime.HttpJspB
                     out.print("Cidade: " + Lista.get(num).getCidade() + "<br>");
                     out.print("UF: " + Lista.get(num).getUF() + "<br>");
                     
+                    out.println("<a href='frmExcluirClienteVIEW.jsp?id=" 
+                            + Lista.get(num).getId_usuario() + "&nome="
+                            + Lista.get(num).getNome_cliente()
+                            + "'> Excluir </a>");
+                    
+                    
+      out.write("  <br><br>  ");
+
+                    
                 }
                 
                 } catch (Exception erro) {

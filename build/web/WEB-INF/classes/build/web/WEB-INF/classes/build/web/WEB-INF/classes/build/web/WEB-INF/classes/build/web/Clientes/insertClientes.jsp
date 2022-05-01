@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar CLiente</title>
+        <title>Cadastrar Cliente</title>
     </head>
     <body>
 

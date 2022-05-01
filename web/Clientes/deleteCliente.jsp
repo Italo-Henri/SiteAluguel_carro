@@ -5,22 +5,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar Cliente</title>
+        <title>JSP Page</title>
     </head>
     <body>
 
         <%
 
             try {
-                
+
                 ClientesDTO objClientesDTO = new ClientesDTO();
-                objClientesDTO.setNome_cliente(request.getParameter("nome"));
+                objClientesDTO.setId_usuario(Integer.parseInt(request.getParameter("id")));
 
                 ClientesDAO objClientesDAO = new ClientesDAO();
-                objClientesDAO.CadastrarCliente(objClientesDTO);
-                
+                objClientesDAO.ExcluirCliente(objClientesDTO);
+
             } catch (Exception erro) {
-                System.out.println("Erro ao executar o cadastro: " + erro);
+                System.out.println("Erro ao excluir o cadastro: " + erro);
             }
 
         %>

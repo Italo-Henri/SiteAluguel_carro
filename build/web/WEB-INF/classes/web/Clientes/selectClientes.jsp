@@ -32,8 +32,14 @@
                     out.print("Endereço: " + Lista.get(num).getEndereco() + "<br>");
                     out.print("Bairro: " + Lista.get(num).getBairro() + "<br>");
                     out.print("Cidade: " + Lista.get(num).getCidade() + "<br>");
-                    out.print("UF: " + Lista.get(num).getUF() + "<br>"
-                    + "<br>");
+                    out.print("UF: " + Lista.get(num).getUF() + "<br>");
+                    
+                    out.println("<a href='frmExcluirClienteVIEW.jsp?id=" 
+                            + Lista.get(num).getId_usuario() + "&nome="
+                            + Lista.get(num).getNome_cliente()
+                            + "'> Excluir </a>");
+                    
+                    %>  <br><br>  <%
                     
                 }
                 
