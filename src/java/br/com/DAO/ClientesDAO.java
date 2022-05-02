@@ -102,5 +102,24 @@ public class ClientesDAO {
         }
 
     }
+    
+    public void AlterarCliente(ClientesDTO objClientesDTO) throws ClassNotFoundException{
+        
+        String sql = "UPDATE clientes SET nome_cliente = ? WHERE id_cliente = ?";
+        con = new ConexaoDAO().conexaoBD();
+
+        try {
+
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, objClientesDTO.getNome_cliente());
+            pstm.setInt(2, objClientesDTO.getId_usuario());
+
+            pstm.execute();
+            pstm.close();
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "ClienteDAO AlterarCliente: " + erro);
+        }       
+    }
 
 }

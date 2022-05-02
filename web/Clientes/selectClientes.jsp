@@ -9,16 +9,16 @@
         <title>Listar Clientes</title>
     </head>
     <body>
-        
+
         <%
-            
+
             try {
-                    
+
                 ClientesDAO objClientesDAO = new ClientesDAO();
                 ArrayList<ClientesDTO> Lista = objClientesDAO.ListarClientes();
-                
-                for(int num = 0; num < Lista.size() ; num ++){
-                    
+
+                for (int num = 0; num < Lista.size(); num++) {
+
                     out.print("Código: " + Lista.get(num).getId_usuario() + "<br>");
                     out.print("Nome: " + Lista.get(num).getNome_cliente() + "<br>");
                     out.print("Gênero: " + Lista.get(num).getSexo() + "<br>");
@@ -33,21 +33,24 @@
                     out.print("Bairro: " + Lista.get(num).getBairro() + "<br>");
                     out.print("Cidade: " + Lista.get(num).getCidade() + "<br>");
                     out.print("UF: " + Lista.get(num).getUF() + "<br>");
-                    
-                    out.println("<a href='frmExcluirClienteVIEW.jsp?id=" 
+
+                    out.println("<a href='frmExcluirClienteVIEW.jsp?id="
                             + Lista.get(num).getId_usuario() + "&nome="
                             + Lista.get(num).getNome_cliente()
                             + "'> Excluir </a>");
-                    
-                    %>  <br><br>  <%
-                    
-                }
-                
-                } catch (Exception erro) {
-                    System.out.println("Não foi possível Listar os Clientes: " + erro);
-                }
+
+                    out.println("<a href='frmAlterarClienteVIEW.jsp?id="
+                            + Lista.get(num).getId_usuario() + "&nome="
+                            + Lista.get(num).getNome_cliente()
+                            + "'> Alterar </a>");
+
+        %>  <br><br>  <%                            }
+
+                        } catch (Exception erro) {
+                            System.out.println("Não foi possível Listar os Clientes: " + erro);
+                        }
 
         %>
-        
+
     </body>
 </html>
